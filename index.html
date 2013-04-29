@@ -13,9 +13,10 @@
     <link href="assets/css/custom.css" rel="stylesheet">
 
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="assets/js/custom.js"></script>
     <script type="text/javascript" src="assets/js/canvasjs.min.js"></script>
     <script type="text/javascript" src="assets/js/Chart.js"></script>
+    <script type="text/javascript" src="assets/js/jQuery.min.js"></script>
+    <script type="text/javascript" src="assets/js/custom.js"></script>
   </head>
 
   <body>
@@ -27,8 +28,8 @@
           <div class="navbar-inner">
             <div class="container">
               <ul class="nav">
-                <li class="active"><a href="#">Coin Tossing</a></li>
-                <li><a href="#">Dice Rolls</a></li>
+                <li class="active"><a href="index.html">Coin Toss</a></li>
+                <li><a href="dice.html">Dice Roll</a></li>
               </ul>
             </div>
           </div>
@@ -37,29 +38,25 @@
 
       <div class="row-fluid">
         <div class="span3">
-          <form name="dieForm" onsubmit="makeChart()">
-            <fieldset>
-              <legend>Coin Toss Options</legend>
-              <label>Number of coin tosses</label>
-              <input name="numTrials" type="text" placeholder="Enter a number">
-              <label>Heads Probability</label>
-              <input name="headsProb" type="text" placeholder="Percent">
-              <div>
-                <button type="submit" class="btn"><i class="icon-play-circle"></i> Run</button>
+          <h3>Coin Toss Options</h3>
+          <span>Number of Coin Tosses</span>
+          <input id="numTrials" type="text" placeholder="Number of Trials"> 
+          
+          <span>Heads Probability</span>
+          <input id="headsProb" type="text" placeholder="Percent chance of rolling heads">
+          
+          <div>
+            <button id="run" type="button" class="btn"><i class="icon-play-circle"></i>Run</button>
+          </div>
+        </div>
+          
+          <div class="span9">
+               <h2>Results</h2>
+              <div class="container-fluid">
+                  <div id="colChartContainer" style="height: 300px; width: 100%;"></div>
               </div>
-            </fieldset>
-          </form>
+          </div>
         </div>
-
-        <div class="span9">
-          <h2>Results</h2>
-          <div class="container-fluid">
-            <!-- <div id="colChartContainer" style="height: 300px; width: 100%;">
-            </div> -->
-            <!-- <canvas id="canvas" height="450" width="600"></canvas> -->
-            <iframe src="chartFrame.html" height=450 width=600 scrolling=no></iframe>
-        </div>
-      </div>
 
 
       <hr>

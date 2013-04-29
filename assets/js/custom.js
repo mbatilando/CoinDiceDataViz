@@ -38,61 +38,34 @@ function coinToss(p, numTrials) {
 
 }
 
-// function makeChart() {
-//   var p = Number(dieForm.elements["headsProb"].value);
-//   var numTrials = Number(dieForm.elements["numTrials"].value);
-//   var dieResults = coinToss(p, numTrials);
-//   var heads = dieResults[0];
-//   var tails = dieResults[1];
+function makeCoinChart() {
+    var p = document.getElementById("headsProb").value;
+    var numTrials = document.getElementById("numTrials").value;
+    var dieResults = coinToss(p, numTrials);
+    var heads = dieResults[0];
+    var tails = dieResults[1];
 
-//   var barChartData = {
-//       labels : ["Heads","Tails"],
-//       datasets : [
-//         {
-//           fillColor : "rgba(220,220,220,0.5)",
-//           strokeColor : "rgba(220,220,220,14)",
-//           data : [heads,tails]
-//         }
-//       ]
-      
-//     }
-
-//     var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Bar(barChartData);
-// }
- 
-
-
-
-
-
-
-
-
-
-
-  window.onload = function makeChart() {
-  var p = Number(dieForm.elements["headsProb"].value);
-  var numTrials = Number(dieForm.elements["numTrials"].value);
-  var dieResults = coinToss(p, numTrials);
-  var dieResults = [150,50]
-  var heads = dieResults[0];
-  var tails = dieResults[1];
-
-  var chart = new CanvasJS.Chart("colChartContainer", {
-      theme: "theme2",
-      title:{
-          text: "Coin Toss Results"              
-     },
-      data: [              
-      {
+    var chart = new CanvasJS.Chart("colChartContainer", {
+        theme: "theme2",
+        title: {
+            text: "Coin Toss Results"
+        },
+        data: [{
             type: "column",
-            dataPoints: [
-              { label: "Heads", y: heads},
-              { label: "Tails", y: tails}
-            ]
-        }
-      ]
+            dataPoints: [{
+                label: "Heads",
+                y: heads
+            }, {
+                label: "Tails",
+                y: tails
+            }]
+        }]
     });
 
     chart.render();
-  }
+}
+
+  $(document).ready(function() {
+  var runButton = document.getElementById("run");
+  runButton.addEventListener("click", makeCoinChart);
+});
