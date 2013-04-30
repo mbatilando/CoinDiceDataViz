@@ -65,7 +65,47 @@ function makeCoinChart() {
     chart.render();
 }
 
-  $(document).ready(function() {
+function makeCoinChartBinom() {
+    var p = document.getElementById("headsProbBinom").value;
+    var numTrials = document.getElementById("numTrialsBinom").value;
+    var numCoinTosses = Number(document.getElementById("numCoinTossBinom").value);
+    var resArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    
+    for (var i = 0; i < numTrials; i++) {
+      var result = coinToss(p, numCoinTosses);
+      resArray[result[0] - 1]++;
+    }
+
+    var chart = new CanvasJS.Chart("colChartContainer", {
+        theme: "theme2",
+        title: {
+            text: "Binomial Distribution Results"
+        },
+        data: [{
+            type: "column",
+            dataPoints: [
+              { label: "One", y: resArray[0]},
+              { label: "Two", y: resArray[1]},
+              { label: "Three", y:resArray[2]},
+              { label: "Four", y: resArray[3]},
+              { label: "Five", y: resArray[4]},
+              { label: "Six", y:resArray[5]},
+              { label: "Seven", y: resArray[6]},
+              { label: "Eight", y: resArray[7]},
+              { label: "Nine", y: resArray[8]},
+              { label: "Ten", y: resArray[9]}
+            ]
+        }]
+    });
+
+    chart.render();
+}
+
+
+
+$(document).ready(function() {
   var runButton = document.getElementById("run");
+  var runButtonBinom = document.getElementById("runBinom");
   runButton.addEventListener("click", makeCoinChart);
+  runButtonBinom.addEventListener("click", makeCoinChartBinom);
 });

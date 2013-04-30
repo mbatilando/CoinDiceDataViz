@@ -74,7 +74,7 @@ function makeDieChart() {
     var chart = new CanvasJS.Chart("dieChartContainer", {
         theme: "theme2",
         title: {
-            text: "Die Roll Results"
+            text: ""
         },
         data: [{
             type: "column",
