@@ -14,9 +14,10 @@
 
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/canvasjs.min.js"></script>
-    <script type="text/javascript" src="assets/js/Chart.js"></script>
+    <script type="text/javascript" src="assets/js/Chart.min.js"></script>
     <script type="text/javascript" src="assets/js/jQuery.min.js"></script>
-    <script type="text/javascript" src="assets/js/dieRoll.min.js"></script>
+    <script type="text/javascript" src="assets/js/dieRoll.js"></script>
+    <script type="text/javascript" src="assets/js/custom.js"></script>
   </head>
 
   <body>
@@ -38,7 +39,7 @@
 
       <div class="row-fluid">
         <div class="span3">
-          <h3>Dice Roll Options</h3>
+          <h4>Dice Roll Options</h4>
           <span>Number of Rolls</span>
           <input id="numTrials" type="text" placeholder="Number of Trials"> 
           
@@ -61,8 +62,19 @@
           <input id="sixProb" type="text" placeholder="Percent chance of rolling a 6">
           
           <div>
-            <button id="run" type="button" class="btn"><i class="icon-play-circle"></i>Run</button>
+            <button id="run" type="button" class="btn btn-primary"><i class="icon-play-circle"></i>Run</button>
           </div>
+
+          <h4>Geometric Distribution</h4>
+          
+          <span>One</span>
+          <input id="oneProbGeom" type="text" placeholder="Percent chance of rolling a 1">
+          <span>Number of Trials</span>
+          <input id="numTrialsGeom" type="text" placeholder="Number of Trials">
+          <div>
+            <button id="runGeom" type="button" class="btn btn-danger"><i class="icon-play-circle"></i>Run</button>
+          </div>
+
         </div>
           
           <div class="span9">

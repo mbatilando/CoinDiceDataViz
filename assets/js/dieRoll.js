@@ -92,7 +92,67 @@ function makeDieChart() {
     chart.render();
 }
 
+
+
+function makeDieGeomChart() {
+  var oneProb = document.getElementById("oneProbGeom").value;
+  var otherProb = 1 - oneProb;
+  var numTrials = document.getElementById("numTrialsGeom").value;
+  var numAttempts = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+  for(var j = 0; j < numTrials; j++){
+    innerloop:
+      for(var counter = 1; true; counter++) {
+        result = coinToss(oneProb, 1);
+        if (result[0] == 1) {
+          numAttempts[counter-1]++;
+          break innerloop;
+        } else {
+          counter++;
+        }
+      }
+  }
+    
+    var chart = new CanvasJS.Chart("dieChartContainer", {
+        theme: "theme2",
+        title: {
+            text: ""
+        },
+        data: [{
+            type: "column",
+            dataPoints: [
+              { label: "One", y: numAttempts[0]},
+              { label: "Two", y: numAttempts[1]},
+              { label: "Three", y:numAttempts[2]},
+              { label: "Four", y: numAttempts[3]},
+              { label: "Five", y: numAttempts[4]},
+              { label: "Six", y:numAttempts[5]},
+              { label: "Seven", y: numAttempts[6]},
+              { label: "Eight", y: numAttempts[7]},
+              { label: "Nine", y:numAttempts[8]},
+              { label: "Ten", y: numAttempts[9]},
+              { label: "Eleven", y: numAttempts[10]},
+              { label: "Twelve", y: numAttempts[11]},
+              { label: "Thirteen", y: numAttempts[12]},
+              { label: "Fourteen", y:numAttempts[13]},
+              { label: "Fifteen", y: numAttempts[14]},
+              { label: "Sixteen", y: numAttempts[15]},
+              { label: "Seventeen", y:numAttempts[16]},
+              { label: "Eighteen", y: numAttempts[17]},
+              { label: "Nineteen", y: numAttempts[18]},
+              { label: "Twenty", y:numAttempts[19]}
+            ]
+        }]
+    });
+
+    chart.render();
+}
+
+
+
   $(document).ready(function() {
   var runButton = document.getElementById("run");
+  var runGeomButton = document.getElementById("runGeom");
   runButton.addEventListener("click", makeDieChart);
+  runGeomButton.addEventListener("click", makeDieGeomChart);
 });
