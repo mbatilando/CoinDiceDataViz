@@ -50,6 +50,12 @@ function makeCoinChart() {
         title: {
             text: "Coin Toss Results"
         },
+        axisX:{
+          title:"",
+         },
+         axisY:{
+          title:"Total",
+         },
         data: [{
             type: "column",
             dataPoints: [{
@@ -81,6 +87,12 @@ function makeCoinChartBinom() {
         title: {
             text: "Binomial Distribution Results"
         },
+        axisX:{
+          title:"Number of Heads",
+         },
+         axisY:{
+          title:"Results in X",
+         },
         data: [{
             type: "column",
             dataPoints: [

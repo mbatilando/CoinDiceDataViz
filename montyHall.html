@@ -16,7 +16,7 @@
     <script type="text/javascript" src="assets/js/canvasjs.min.js"></script>
     <script type="text/javascript" src="assets/js/Chart.min.js"></script>
     <script type="text/javascript" src="assets/js/jQuery.min.js"></script>
-    <script type="text/javascript" src="assets/js/custom.js"></script>
+    <script type="text/javascript" src="assets/js/montyHall.js"></script>
   </head>
 
   <body>
@@ -28,9 +28,9 @@
           <div class="navbar-inner">
             <div class="container">
               <ul class="nav">
-                <li class="active"><a href="index.html">Coin Toss</a></li>
+                <li><a href="index.html">Coin Toss</a></li>
                 <li><a href="dice.html">Dice Roll</a></li>
-                <li><a href="montyHall.html">Monty Hall</a></li>
+                <li class="active"><a href="montyHall.html">Monty Hall</a></li>
               </ul>
             </div>
           </div>
@@ -39,41 +39,14 @@
 
       <div class="row-fluid">
         <div class="span3">
-          <h4>Coin Toss Options</h4>
-          <span>Number of Coin Tosses</span>
-          <input id="numTrials" type="text" placeholder="Number of Trials"> 
-          
-          <span>Heads Probability</span>
-          <input id="headsProb" type="text" placeholder="Percent chance of rolling heads">
-          
-          <div>
-            <button id="run" type="button" class="btn btn-primary"><i class="icon-play-circle"></i>Run</button>
-          </div>
-
-          <h4>Binomial Distribution</h4>
-          <span>Number of Coin Tosses</span>
-          <select id="numCoinTossBinom">
-            <option value=1>1</option>
-            <option value=2>2</option>
-            <option value=3>3</option>
-            <option value=4>4</option>
-            <option value=5>5</option>
-            <option value=6>6</option>
-            <option value=7>7</option>
-            <option value=8>8</option>
-            <option value=9>9</option>
-            <option value=10>10</option>
-          </select>
-
+          <h4>Options</h4>
           <span>Number of Trials</span>
-          <input id="numTrialsBinom" type="text" placeholder="Number of Trials"> 
-          
-          <span>Heads Probability</span>
-          <input id="headsProbBinom" type="text" placeholder="Percent chance of rolling heads">
-          
+          <input id="numTrials" type="text" placeholder="Number of Trials"> 
+
           <div>
-            <button id="runBinom" type="button" class="btn btn-danger"><i class="icon-play-circle"></i>Run</button>
+            <button id="runMonty" type="button" class="btn btn-primary"><i class="icon-play-circle"></i>Run</button>
           </div>
+
 
         </div>
           

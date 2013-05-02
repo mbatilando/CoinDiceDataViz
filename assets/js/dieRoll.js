@@ -74,8 +74,14 @@ function makeDieChart() {
     var chart = new CanvasJS.Chart("dieChartContainer", {
         theme: "theme2",
         title: {
-            text: ""
+            text: "Ordinary Dice Roll"
         },
+        axisX:{
+          title:"Dice Results",
+         },
+         axisY:{
+          title:"Total",
+         },
         data: [{
             type: "column",
             dataPoints: [
@@ -96,7 +102,6 @@ function makeDieChart() {
 
 function makeDieGeomChart() {
   var oneProb = document.getElementById("oneProbGeom").value;
-  var otherProb = 1 - oneProb;
   var numTrials = document.getElementById("numTrialsGeom").value;
   var numAttempts = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
@@ -116,8 +121,14 @@ function makeDieGeomChart() {
     var chart = new CanvasJS.Chart("dieChartContainer", {
         theme: "theme2",
         title: {
-            text: ""
+            text: "Geometric Distribution"
         },
+        axisX:{
+          title:"Number of Attempts before Rolling a 1",
+         },
+         axisY:{
+          title:"Total",
+         },
         data: [{
             type: "column",
             dataPoints: [
